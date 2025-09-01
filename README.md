@@ -18,4 +18,40 @@ LUME-DBN jointly learns network structure, regression parameters, and missing va
    At regular intervals, missing values are resampled from their full conditional distributions, which are Gaussian under the model assumptions. Each update accounts simultaneously for a variable’s own regression and its influence on child nodes, ensuring consistency across the network.
 <img src="https://github.com/federicopirola/LUME-DBN/blob/main/images/missing%20values%20update.png" alt="Missing Update" width="1000"/>
 
+<h1>Code Overview</h1>
+
+The `code` folder contains all the functions and scripts used for Bayesian Linear Regression (BLR), Dynamic Bayesian Networks (DBNs), and Non-Homogeneous DBNs (NH-DBNs) analysis, learning, simulation, and visualization. It is organized into the following subfolders:
+
+## distributions
+Contains functions for:
+- Sampling and computing densities of classic distributions, including Gaussian, Inverse Gamma, Poisson, Negative Binomial, and Geometric.  
+- Sampling parameters and missing values from the Full Conditional Distribution.  
+- Computing conditional likelihoods, prior probabilities, and marginal likelihoods.
+
+## learning
+Contains functions and scripts for:
+- Metropolis-Hastings structural moves.  
+- Collapsed Gibbs sampling for parameter moves.  
+- Gibbs sampling for missing values imputation.  
+- Learning single Bayesian Linear Regression models, Dynamic Bayesian Networks (DBNs) with complete data, and the LUME-DBN algorithm for learning DBNs from incomplete data.  
+- Extensions for learning non-homogeneous DBNs in the case of complete data.
+
+## random_generation
+Contains functions for:
+- Randomly generating Bayesian Linear Regression parameters.  
+- Randomly generating DBN and NH-DBN structures and parameters.  
+- Generating datasets from BLRs and DBNs.  
+- Creating random incomplete datasets from complete data.
+
+## plots
+Contains functions for:
+- Visualizing BLR, DBN, and NH-DBN models.  
+- Plotting posterior sample distributions.  
+- Generating missing value credible intervals.  
+- Performing convergence diagnostics and visualizations.
+
+## utils
+Contains additional utility functions frequently used across simulations, learning, and plotting scripts.
+
+
 📧 Federico Pirola: [f.pirola17@campus.unimib.it](mailto:f.pirola17@campus.unimib.it)
